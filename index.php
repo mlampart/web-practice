@@ -5,17 +5,21 @@
   <title>Michael's Pi</title>
  </head>
  <body>
-
- <h1> Welcome to Michael's Raspberry Pi!</h1>
- <nav>
+<div id="wrapper">
+ <div id="header">
+ <h1>The Love Zone</h1>
+   <nav class="navlinks">
 	<a href="index.php">Home</a>
 	<a href="shootStill.php">TAKE A PICTURE</a>
- </nav>
- </body>
-</html>
+	<a href="about.php">About</a>
+   </nav>
+  </div>
+  <div id="content">
 
 
 <?php
+//Connect to the server
+include('connectServer.php');
 
 //Set permissions for camera to write to directories
 exec("sudo chmod 777 /dev/vchiq");
@@ -25,15 +29,19 @@ exec("sudo chmod 777 /var/www");
 if (array_key_exists('delete_file', $_POST)) {
   $filename = $_POST['delete_file'];
   if (file_exists($filename)) {
-      unlink($filename);
+    $qry = "UPDATE images SET deleted=1 WHERE path='".$filename."'";
+    $result = mysqli_query($conn, $qry);
   } 
 }
 
-$directory = "images/";
+//$directory = "images/";
  
-$images = glob("" . $directory . "*.jpg");
- 
-foreach ($images as $image) {
+//$images = glob("" . $directory . "*.jpg");
+$qry = "SELECT * FROM images WHERE deleted=0";
+$result = mysqli_query($conn, $qry);
+
+while ($row = mysqli_fetch_assoc($result)){
+	$image = $row["path"];
 	echo '<div class="img">';
 	echo '<a target="_blank" href="' .$image. '"><img src="' .$image. '" onload="this.width*=0.5;this.onload=null;" /> ';
 	echo '<form method="post">';
@@ -44,3 +52,15 @@ foreach ($images as $image) {
 } 
 
 ?>
+
+
+
+
+  </div>
+  <footer id="footer">
+	<p>Michael Lampart</p>
+  </footer>
+  </div> 
+ </body>
+</html>
+
