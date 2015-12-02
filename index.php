@@ -1,3 +1,4 @@
+<?php include('loginCheck.php'); ?>
 <html>
  <head>
   <link href="index.css" rel="stylesheet" type="text/css">
@@ -7,11 +8,20 @@
  <body>
 <div id="wrapper">
  <div id="header">
- <h1>The Love Zone</h1>
-   <nav class="navlinks">
+ <h1 id="title">Michael Lampart</h1>
+    <nav class="navlinks">
 	<a href="index.php">Home</a>
-	<a href="shootStill.php">TAKE A PICTURE</a>
-	<a href="about.php">About</a>
+        <?php
+        if(!$logged_in){
+            echo '<a href="login.html">Login</a>';
+        }
+        else{
+            echo '<a href="logout.php">Logout</a>';
+        }
+        ?>
+        <a href="account.php">Account</a>
+        <a href="register.html">Register</a>
+	<a href="shootStill.php"><span style="float:right;">TAKE A PICTURE</span></a>
    </nav>
   </div>
   <div id="content">
@@ -50,12 +60,8 @@ while ($row = mysqli_fetch_assoc($result)){
 	echo '</form></a>';
 	echo '</div>';
 } 
-
+mysqli_close($conn);
 ?>
-
-
-
-
   </div>
   <footer id="footer">
 	<p>Michael Lampart</p>
