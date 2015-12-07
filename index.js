@@ -1,6 +1,7 @@
-var deletePhoto;
-deletePhoto = function (){
-	return confirm('Are you sure you want to delete this photo?');
+function deletePhoto(id){
+    if(confirm('Are you sure you want to delete this photo?')){
+        window.location.href='index.php?delete_id='+id;
+    }
 }
 
 var validateForm;

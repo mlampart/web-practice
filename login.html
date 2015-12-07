@@ -1,29 +1,31 @@
 <html>
- <head>
-  <link href="index.css" rel="stylesheet" type="text/css">
-  <script type="text/javascript" src="index.js"></script>
-  <title>Login Page</title>
- </head>
- <body>
-<div id="wrapper">
- <div id="header">
- <h1 id="title">Michael Lampart</h1>
-   <nav class="navlinks">
-        <a href="index.php">Home</a>
-   </nav>
-  </div>
-  <div id="content">
-        <form id='login' action='login.php' method='post'>
-	 <label for='username' >Username:</label>
-	 <input type='text' name='username'required title="Please enter username" maxlength='3' />
-	 <input type='submit' name='Submit' value='Submit' />
-	 <a href="register.html">Register</a>
-	</form>
-  </div>
-  <footer id="footer">
-        <p>Michael Lampart</p>
-  </footer>
-  </div>
- </body>
+<head>
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="index.js"></script>
+    <title>Login Page</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <nav id="navlinks">
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="content">
+            <h3>Please login, or register if you don't have an account yet!</h3><br>
+            <form id='login' action='login.php' method='post'>
+                <label for='username' >Username:</label>
+                <input type='text' name='username'required title="Please enter username" maxlength='3' />
+                <input type='submit' name='Submit' value='Submit' />
+            </form>
+        </div>
+        <footer id="footer">
+            <p>Michael Lampart</p>
+        </footer>
+    </div>
+</body>
 </html>
 

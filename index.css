@@ -1,7 +1,7 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+v2.0 | 20110126
+License: none (public domain)
+ */
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -16,35 +16,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 } 
 
 
@@ -53,51 +53,98 @@ table {
 
 
 html,body {
-   margin:0;
-   padding:0;
-   height:100%;
- }
+    margin:0;
+    padding:0;
+    height:100%;
+}
 
- #wrapper {
-   position:relative;
-   padding-left:10px;
-   padding-right:10px;
-   background:#eeeeee;
- }
- 
- #header {
-   background:#dddddd;
-   position:relative;
-   width:100%;
- }
+#wrapper {
+    position:relative;
+    background:#ffffff;
+}
 
- #title {
-   text-align:center;
-   font-family: "Palatino";
-   font-size:40px;
- }
+#header {
+    background:darkkhaki;
+    position:relative;
+    width:100%;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+}
 
- .navlinks {
-   font-family: "Palatino";
-   font-size:30px;
- } 
+#title {
+    text-align:left;
+    font-family: helvetica neue, serif;
+    font-size:40px;
+}
 
- .snap {
-   text-align:right;
- }
+/*-----------NAVIGATION BAR------------*/
 
- #content {
-   background:#cccccc;
- }
+#navlinks {
+    font-family: helvetica neue, serif;
+    font-size:30px;
+} 
 
- .img {
-   display:inline-block;
-   margin:10px;
-   text-align: center;
-   border: 3px solid black;
- }
+#navlinks li {
+    display: inline;
+}
 
- #footer {
-  text-align: center;
-  background: #dddddd;
- }
+#navlinks a {
+    text-decoration: none;
+}
+
+#navlinks a:hover {
+    background-color: #979255;
+}
+
+#navlinks a:visited {
+    color: black;
+}
+
+#navlinks a.active {
+    color: red;
+}
+
+#snap {
+    float:right;
+    background-color: #979255;
+    height:33px;
+    border-left: solid white 3px;
+}
+
+#content {
+    background: whitesmoke;
+    text-align: center;
+}
+
+#register {
+    display:-moz-inline-grid;
+}
+
+.img {
+    display:inline-block;
+    margin:10px;
+    text-align: center;
+    border: 3px solid white;
+}
+
+.delete {
+    font-size: 20px;
+    background-color:lightgray;
+    border:none;
+    width:100%;
+    text-decoration: none;
+    transition: .3s background-color; 
+}
+
+.delete:hover {
+    background-color:darkkhaki;
+}
+
+#footer {
+    border-top: solid white 3px;
+    text-align: center;
+    background: darkkhaki;
+}
+
+
+
